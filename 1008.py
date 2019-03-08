@@ -1,0 +1,6 @@
+n = int(input())
+h = int(input())
+v = float(input())
+print('NUMBER =',n)
+s=round(h*v,2)
+print('SALARY = U$ %.2f'%s)
