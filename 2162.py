@@ -1,32 +1,19 @@
+def picos_vales(n,xs):
+    for i in range(n-1):
+        if xs[i] < xs[i+1]:
+            if (i!=0 and relevo == 1):
+                return 0
+            relevo = 1
+        elif xs[i] > xs[i+1]:
+            if (i!=0 and relevo == 0):
+                return 0
+            relevo = 0
+        else:
+            return 0
+    return 1
+    
 n = int(input())
 
 xs = list(map(int,input().split()))
 
-pico,vale = False,False
-
-if n==1:
-    print(1)
-    exit()
-if n==2 and xs[0]!=xs[1]:
-    print(1)
-    exit()
-
-if xs[1]>xs[0] and xs[1]>xs[2]:
-    pico = True
-if xs[1]<xs[0] and xs[1]<xs[2]:
-    vale = True
-
-for i in range(3,n-1,2):
-    if (pico):
-        if not(xs[i]>xs[i-1] and xs[i]>xs[i+1]):
-            print(0)
-            exit()
-    if (vale):
-        if not(xs[i]<xs[i-1] and xs[i]<xs[i+1]):
-            print(0)
-            exit()
-
-if pico or vale:
-    print(1)
-else:
-    print(0)
+print(picos_vales(n,xs))
